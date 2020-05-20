@@ -16,6 +16,7 @@ function App() {
       // Se busca un "document" como "task", creando una copia de este, si es qe cambia el contenido esta se actualiza
       db.collection("task").onSnapshot(function(data) {
         console.log(data)
+        // ...doc.data() junta toda la data que viene con id: doc.id
         setTasks(data.docs.map( doc => ({ ...doc.data(), id: doc.id} )));
       });
 
